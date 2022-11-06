@@ -22,4 +22,9 @@ public class SurveysController : ControllerBase
     return await _context.Surveys.ToListAsync();
   }
 
+  [HttpGet("{id}")]
+  public async Task<ActionResult<Survey>> GetSurvey(int id)
+  {
+    return await _context.Surveys.FindAsync(id);
+  }
 }
