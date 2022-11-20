@@ -12,7 +12,7 @@ export default function Header({darkMode, handleThemeChange}: Props) {
   return (
     <>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar style={{display: "flex", justifyContent: "space-between"}}>
           <Typography variant='h6'>
             Survey
           </Typography>

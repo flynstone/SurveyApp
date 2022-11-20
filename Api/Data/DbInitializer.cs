@@ -28,7 +28,7 @@ public static class DbInitializer
       new Survey
       {
         EnvRating = "4 Stars",
-        MoodRating = "1 Stars",
+        MoodRating = "1 Star",
         MoodDetails = "Work related"
       }
     };

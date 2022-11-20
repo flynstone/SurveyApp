@@ -1,16 +1,11 @@
+import { Container, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { useState } from 'react';
-import Feedback from '../../features/feedback/Feedback';
-import Header from './Header';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
 import { Route } from 'react-router-dom';
+import DashboardPage from '../../features/dashboard/DashboardPage';
 import HomePage from '../../features/home/HomePage';
-import '@fontsource/grandstander/300.css';
-import '@fontsource/grandstander/400.css';
-import '@fontsource/grandstander/500.css';
-import '@fontsource/grandstander/700.css';
-import FeedbackDetails from '../../features/feedback/FeedbackDetails';
+import SurveyPage from '../../features/home/SurveyPage';
+import Header from './Header';
+import './styles.scss';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -39,8 +34,8 @@ function App() {
       <Header darkMode={darkMode} handleThemeChange={handleThemeChange}/>
       <Container>
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/feedback' component={Feedback} />
-        <Route path='/feedback/:id' component={FeedbackDetails} />
+        <Route exact path='/surveys' component={DashboardPage} />
+        <Route path='/surveypage' component={SurveyPage} />
       </Container>
     </ThemeProvider>
   );

@@ -1,4 +1,5 @@
 using Api.Data;
+using Api.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddCors();
+// Import service scopes from extensions.
+builder.Services.ConfigureScopes();
 
 var app = builder.Build();
 
